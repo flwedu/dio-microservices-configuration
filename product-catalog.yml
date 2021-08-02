@@ -1,0 +1,5 @@
+# Configuração principal
+server:
+ port: 8081
+# ElasticSearch configs
+spring.data.elasticsearch.properties.transport.tcp.connect_timeout: 120s

@@ -1,3 +1,5 @@
+# Configurações do Gateway
+
 # Configurações do Eureka
 eureka:
   instance: 

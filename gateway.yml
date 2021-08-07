@@ -1,8 +1,8 @@
 # Configurações do Gateway
 
-# Configurações do Eureka
+# Configurações do service-discovery
 eureka:
-  instance: 
+  instance:
     hostname: localhost
     port: 9000
   client:
@@ -11,12 +11,12 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
     server:
-      wait-time-in-ms-when-sync-empty: 3000 
+      wait-time-in-ms-when-sync-empty: 3000
 
 # Configurações do Gateway
 spring:
   cloud:
-    gateway:    
+    gateway:
       discovery:
         locator:
           enabled: true
@@ -25,8 +25,8 @@ spring:
         - id: product-catalog
           uri: lb://PRODUCT-CATALOG
           predicates:
-            - Path=/product/**
+            - Path: /product/**
         - id: shopping-cart
           uri: lb://SHOPPING-CART
           predicates:
-            - Path=/cart/**
+            - Path: /cart/**

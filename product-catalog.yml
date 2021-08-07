@@ -1,12 +1,13 @@
 # Configuração principal
 server:
- port: 8081
+  port: 8081
+
 # ElasticSearch configs
 spring.data.elasticsearch.properties.transport.tcp.connect_timeout: 120s
 
 # Configurações do service-discovery
 eureka:
-  instance: 
+  instance:
     hostname: localhost
     port: 9000
   client:
@@ -15,4 +16,4 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
     server:
-      wait-time-in-ms-when-sync-empty: 3000 
+      wait-time-in-ms-when-sync-empty: 3000
